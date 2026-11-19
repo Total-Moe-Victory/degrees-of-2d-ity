@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b278ufwlio1yy"]
+
+[ext_resource type="PackedScene" uid="uid://177fqbvaj4hf" path="res://rigid_player_test.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=437172461]
+
+[node name="RigidPlayerTest" parent="." unique_id=1022029725 instance=ExtResource("1_ig7tw")]
