@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://pcdgcfgu02x3"]
+
+[ext_resource type="Script" uid="uid://dg5yxgqaykidc" path="res://label.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://bdnb3djwx3s3f" path="res://world_time.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://177fqbvaj4hf" path="res://player/rigid_player_test.tscn" id="2_fj7yv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fj7yv"]
+
+[node name="World" type="Node" unique_id=476330707]
+
+[node name="world processes" type="Node" parent="." unique_id=831041772]
+script = ExtResource("1_tlwt5")
+
+[node name="PauseButton" type="Button" parent="." unique_id=990188132]
+offset_left = 830.0
+offset_top = 7.0
+offset_right = 1126.0
+offset_bottom = 158.0
+
+[node name="Control" type="Control" parent="." unique_id=1303624144]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1618774636]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 164.0
+offset_right = 1355.0
+offset_bottom = 233.0
+label_settings = SubResource("LabelSettings_fj7yv")
+script = ExtResource("1_f3sb7")
+
+[node name="RigidPlayerTest" parent="." unique_id=1022029725 instance=ExtResource("2_fj7yv")]
+position = Vector2(-1, 0)
+
+[connection signal="pressed" from="PauseButton" to="RigidPlayerTest" method="_on_pause_button_pressed"]
